@@ -96,3 +96,33 @@ Note: We do not submit any data in cancel_url, it will be your product page link
 
 
 
+# AAMARPAY PAYMENT GATEWAY
+Excepted Work Flow of Aamarpay Payment gateway
+![image](https://github.com/user-attachments/assets/7a05abea-b015-4de4-a378-ba9d7654e0fa)
+
+- Client send a request to server to make a payment with Aamarpay payment gateway.
+- Server connects with Aamarpay with the information which is provided by client and
+create a payment url.
+- Aamarpay payment gateway returns the response with transaction id and payment url.
+- 
+![image](https://github.com/user-attachments/assets/c253fdc1-bf9a-48e3-94e3-366ce5883255)
+
+- After getting the payment url response, server forward this response to the client side.
+- Whenever the response received from server with the payment url, Client will try to build
+the widget from the url which is reserved from the server.
+- Once widget is build by client it will provide options to the user such as Netbanking,
+credit/debit cards etc., User will do select the appropriate method and try to complete
+the transaction.
+- Once the transaction is completed based on the respective transaction status Aamarpay
+payment gateway is redirecting to the respective success, failure or cancel url.
+- But the problem which is there in the current system is instead of redirecting to the
+respective success/failure/cancel url it is doing a post request. Below mentioned
+flowchart we've highlighted in red color which is the problematic area for our
+microservice based application.
+
+
+Hence we are considering that the Aamarpay payment gateway is not best fit for the
+microservices based architecture.
+
+![image](https://github.com/user-attachments/assets/535ff1fb-e541-49dc-b288-60514c74d1c8)
+
