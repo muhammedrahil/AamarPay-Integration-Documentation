@@ -12,6 +12,7 @@ REST AP Is are supported in two environments. Use the Sandbox environment for te
 ### For  Post Method in json  You need to the calling url as below
 
 ●  Sandbox (for testing) :  https:// sandbox .aamarpay.com/ jsonpost.php
+
 ●  Live (production) :  https://secure.aamarpay.com / jsonpost.php
 
 ### Variables Need to Post to Initialize Payment Process Order URL
